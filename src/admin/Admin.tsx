@@ -138,7 +138,7 @@ export default function Admin() {
           <span>LittleThreads <em>studio</em></span>
         </a>
         <div className="a-header-actions">
-          <a className="a-btn ghost" href="/api/admin/export.csv">Export CSV</a>
+          <a className="a-btn ghost" href="/api/admin/export">Export CSV</a>
           <button className="a-btn ghost" onClick={() => api.logout().then(() => setAuthed(false))}>Sign out</button>
         </div>
       </header>

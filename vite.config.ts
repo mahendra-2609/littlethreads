@@ -5,10 +5,9 @@ export default defineConfig({
   plugins: [react()],
   server: {
     port: 5173,
-    proxy: {
-      // In development the Express API runs on 3001; Vite forwards /api to it.
-      "/api": "http://localhost:3001",
-    },
+    // `npm run dev` also starts `wrangler pages dev` on 8788, which runs the real
+    // Pages Functions against a local D1. Vite forwards /api there.
+    proxy: { "/api": "http://localhost:8788" },
   },
   build: {
     outDir: "dist",

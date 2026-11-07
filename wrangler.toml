@@ -1,0 +1,18 @@
+name = "littlethreads"
+compatibility_date = "2026-11-01"
+pages_build_output_dir = "dist"
+
+# Create the database once with:  npx wrangler d1 create littlethreads
+# then paste the returned id here and commit it (the id is not a secret).
+[[d1_databases]]
+binding = "DB"
+database_name = "littlethreads"
+database_id = "REPLACE_WITH_ID_FROM_WRANGLER_D1_CREATE"
+
+# Secrets are NOT set here. Locally they come from .dev.vars; in production from
+# Cloudflare Pages → Settings → Variables and Secrets:
+#   ADMIN_PASSWORD   password for /admin (8+ characters)
+#   SESSION_SECRET   random 64-hex string that signs the admin session cookie
+#   RESEND_API_KEY   optional, enables the email notification
+#   CONTACT_TO       optional, defaults to tejaswiande029@gmail.com
+#   CONTACT_FROM     optional, e.g. "LittleThreads <hello@littlethreads.store>"
