@@ -23,8 +23,8 @@ export function Footer() {
           <div className="reveal" style={delay(2, 120)}>
             <p className="footer-h">Say hello</p>
             <ul>
-              <li><a href="mailto:hello@littlethreads.com">hello@littlethreads.com</a></li>
-              <li><a href="https://instagram.com/" target="_blank" rel="noreferrer">@littlethreads</a></li>
+              <li><a href="mailto:tejaswiande029@gmail.com">tejaswiande029@gmail.com</a></li>
+              <li><a href="https://instagram.com/little_threadsstudio17" target="_blank" rel="noreferrer">@little_threadsstudio17</a></li>
             </ul>
           </div>
         </div>

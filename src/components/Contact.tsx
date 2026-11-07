@@ -74,8 +74,8 @@ export function Contact() {
           <div className="contact-side reveal-group">
             <p className="sec-intro reveal">Send a few details and we’ll reply within two days with ideas, a quote and an estimated finish date.</p>
             <dl className="contact-details">
-              <div className="reveal" style={delay(1, 120)}><dt>Email</dt><dd><a href="mailto:hello@littlethreads.com">hello@littlethreads.com</a></dd></div>
-              <div className="reveal" style={delay(2, 120)}><dt>Instagram</dt><dd><a href="https://instagram.com/" target="_blank" rel="noreferrer">@littlethreads</a></dd></div>
+              <div className="reveal" style={delay(1, 120)}><dt>Email</dt><dd><a href="mailto:tejaswiande029@gmail.com">tejaswiande029@gmail.com</a></dd></div>
+              <div className="reveal" style={delay(2, 120)}><dt>Instagram</dt><dd><a href="https://instagram.com/little_threadsstudio17" target="_blank" rel="noreferrer">@little_threadsstudio17</a></dd></div>
               <div className="reveal" style={delay(3, 120)}><dt>Studio hours</dt><dd>Mon – Fri, 9am – 5pm</dd></div>
             </dl>
             <div className="contact-spray" aria-hidden="true"><Spray /></div>

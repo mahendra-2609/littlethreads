@@ -67,7 +67,7 @@ src/
 - **Stats under the hero**: `ITEMS` in `src/components/Highlights.tsx`
 - **"What's included" & process steps**: `INCLUDED` in `CustomOrders.tsx`, `STEPS` in `Process.tsx`
 - **FAQ**: `FAQS` in `src/components/Faq.tsx`
-- **Email / Instagram**: `src/components/Contact.tsx` (and `CONTACT_TO` in `.env`)
+- **Email / Instagram**: `src/components/Contact.tsx` and `Footer.tsx` (and `CONTACT_TO` in `.env`)
 - **Story text**: `src/components/Story.tsx`
 - **Colours**: the `:root` tokens at the top of `src/styles.css`
 
