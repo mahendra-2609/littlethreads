@@ -1,8 +1,10 @@
 import { Letters, delay } from "./Split";
+import { Vine } from "./Motifs";
 
 export function Footer() {
   return (
     <footer className="site-footer">
+      <div className="footer-vine" aria-hidden="true"><Vine tone="cream" /></div>
       <div className="container">
         <p className="footer-word reveal-group" aria-hidden="true"><Letters text="LittleThreads" /></p>
         <div className="footer-grid reveal-group">

@@ -10,6 +10,7 @@ import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import { SewProgress } from "./components/SewProgress";
 import { StitchDefs } from "./components/StitchDefs";
+import { Divider } from "./components/Motifs";
 import { useReveal } from "./hooks/useReveal";
 
 export default function App() {
@@ -23,11 +24,17 @@ export default function App() {
       <main id="main">
         <Hero />
         <Highlights />
+        <Divider />
         <Collection />
+        <Divider />
         <CustomOrders />
+        <Divider />
         <Process />
+        <Divider />
         <Story />
+        <Divider />
         <Faq />
+        <Divider />
         <Contact />
       </main>
       <Footer />

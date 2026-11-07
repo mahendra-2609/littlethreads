@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { SectionHead } from "./SectionHead";
 import { delay } from "./Split";
+import { Sprig } from "./Motifs";
 
 const STEPS = [
   { title: "Share your idea", text: "Send a message with a photo, a name or simply a feeling you’d like captured. Rough is fine — that’s what the sketch is for.", time: "Day 1" },
@@ -42,6 +43,7 @@ export function Process() {
         <div className="process-side">
           <SectionHead num="03" kicker="How it works" lines={["From idea to hoop", "in four steps."]} />
           <p className="sec-intro reveal">Everything is made to order, so every piece starts the same way: with a conversation.</p>
+          <div className="side-motif" aria-hidden="true"><Sprig /></div>
         </div>
         <ol className="steps" ref={list}>
           <span className="steps-thread" aria-hidden="true" />

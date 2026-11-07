@@ -12,6 +12,9 @@ export function StitchDefs() {
         <pattern id="satin-burgundy" width="3" height="3" patternUnits="userSpaceOnUse" patternTransform="rotate(35)">
           <rect width="3" height="3" fill="#8a2944" /><rect width="1" height="3" fill="#661730" /><rect x="2" width=".5" height="3" fill="#a8455f" />
         </pattern>
+        <pattern id="satin-blush" width="3" height="3" patternUnits="userSpaceOnUse" patternTransform="rotate(-50)">
+          <rect width="3" height="3" fill="#ecc4c6" /><rect width="1" height="3" fill="#d9a3a8" /><rect x="2" width=".5" height="3" fill="#f6dcdd" />
+        </pattern>
         <pattern id="satin-cream" width="3" height="3" patternUnits="userSpaceOnUse" patternTransform="rotate(20)">
           <rect width="3" height="3" fill="#f6e6cf" /><rect width="1" height="3" fill="#e4cfae" />
         </pattern>

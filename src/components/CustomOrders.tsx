@@ -1,5 +1,6 @@
 import { SectionHead } from "./SectionHead";
 import { Words, delay } from "./Split";
+import { Wreath } from "./Motifs";
 
 const INCLUDED = [
   ["Sketch first", "A free design sketch and thread palette before a single stitch."],
@@ -32,6 +33,7 @@ export function CustomOrders() {
           </ol>
 
           <figure className="pull-quote reveal-group">
+            <div className="quote-wreath" aria-hidden="true"><Wreath /></div>
             <blockquote>
               <p><Words text="Every piece begins with a conversation and ends with a little bit of someone’s story held inside a hoop." /></p>
             </blockquote>

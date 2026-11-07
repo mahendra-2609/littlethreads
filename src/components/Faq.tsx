@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { SectionHead } from "./SectionHead";
 import { delay } from "./Split";
+import { Cluster } from "./Motifs";
 
 const FAQS = [
   { q: "How long does a custom piece take?", a: "Most hoops are stitched within one to three weeks, depending on size and detail. We’ll give you an estimated finish date with your quote, and send progress photos along the way." },
@@ -15,7 +16,10 @@ export function Faq() {
   return (
     <section className="section faq" id="faq">
       <div className="container faq-grid">
-        <SectionHead num="05" kicker="Good to know" lines={["Questions,", "answered."]} />
+        <div className="faq-side">
+          <SectionHead num="05" kicker="Good to know" lines={["Questions,", "answered."]} />
+          <div className="side-motif" aria-hidden="true"><Cluster /></div>
+        </div>
         <div className="faq-list reveal-group">
           {FAQS.map((f, i) => {
             const isOpen = open === i;

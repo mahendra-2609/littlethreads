@@ -1,6 +1,7 @@
 import { useState, type FormEvent } from "react";
 import { SectionHead } from "./SectionHead";
 import { delay } from "./Split";
+import { Spray } from "./Motifs";
 
 type Fields = { name: string; email: string; type: string; message: string; website: string };
 type Errors = Partial<Record<keyof Fields, string>>;
@@ -77,6 +78,7 @@ export function Contact() {
               <div className="reveal" style={delay(2, 120)}><dt>Instagram</dt><dd><a href="https://instagram.com/" target="_blank" rel="noreferrer">@littlethreads</a></dd></div>
               <div className="reveal" style={delay(3, 120)}><dt>Studio hours</dt><dd>Mon – Fri, 9am – 5pm</dd></div>
             </dl>
+            <div className="contact-spray" aria-hidden="true"><Spray /></div>
           </div>
 
           {status.kind === "sent" ? (

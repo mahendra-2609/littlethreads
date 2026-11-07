@@ -1,22 +1,30 @@
 import type { MouseEvent, ReactNode } from "react";
 import { SectionHead } from "./SectionHead";
 import { delay } from "./Split";
+import { StitchArt } from "../stitch/Needle";
 
+const OLIVE = "#6b6a3a", ROSE = "#c46c78", CREAM = "#c79e6c", BURGUNDY = "#8a2944";
+
+/** A mini hoop whose design is embroidered live when the card scrolls into view. */
 function Hoop({ children }: { children: ReactNode }) {
   return (
-    <svg viewBox="0 0 200 200">
+    <StitchArt viewBox="0 0 200 200" needleScale={0.7} speed={0.9}>
       <g className="clamp"><rect x="84" y="3" width="32" height="6" rx="3" /><rect x="91" y="7" width="18" height="14" rx="2" /></g>
       <circle cx="100" cy="100" r="78" className="hoop" />
       <circle cx="100" cy="100" r="70" className="linen-fill" />
       {children}
-    </svg>
+    </StitchArt>
   );
 }
 
 const Flower = ({ x, y, s = 1 }: { x: number; y: number; s?: number }) => (
   <g className="flower" transform={`translate(${x} ${y}) scale(${s})`}>
-    <circle r="14" cx="0" cy="-20" /><circle r="14" cx="19" cy="-6" /><circle r="14" cx="12" cy="17" />
-    <circle r="14" cx="-12" cy="17" /><circle r="14" cx="-19" cy="-6" /><circle r="7" className="center" />
+    <circle data-st data-thread={ROSE} r="14" cx="0" cy="-20" />
+    <circle data-st data-thread={ROSE} r="14" cx="19" cy="-6" />
+    <circle data-st data-thread={ROSE} r="14" cx="12" cy="17" />
+    <circle data-st data-thread={ROSE} r="14" cx="-12" cy="17" />
+    <circle data-st data-thread={ROSE} r="14" cx="-19" cy="-6" />
+    <circle data-st data-thread={CREAM} data-stitches={4} r="7" className="center" />
   </g>
 );
 
@@ -26,9 +34,9 @@ const ITEMS = [
     text: "Wildflowers, sprigs and blossoms in soft, earthy tones. Ready to hang.",
     art: (
       <Hoop>
+        <path data-st data-kind="stroke" data-thread={OLIVE} className="stem" d="M100 116 C 100 140, 90 150, 84 160" />
+        <path data-st data-thread={OLIVE} className="leaf" d="M96 140 c -18 -6 -26 4 -28 10 c 10 2 22 0 28 -10Z" />
         <Flower x={100} y={96} />
-        <path className="stem" d="M100 116 C 100 140, 90 150, 84 160" />
-        <path className="leaf" d="M96 140 c -18 -6 -26 4 -28 10 c 10 2 22 0 28 -10Z" />
       </Hoop>
     ),
   },
@@ -37,9 +45,9 @@ const ITEMS = [
     text: "A baby’s name, date and weight, framed in tiny flowers. A nursery keepsake.",
     art: (
       <Hoop>
-        <text x="100" y="98" textAnchor="middle" className="stitch-text">Amelia</text>
-        <text x="100" y="122" textAnchor="middle" className="stitch-small">12 · 03 · 2026</text>
-        <path className="vine" d="M58 140 q 21 -12 42 0 t 42 0" />
+        <path data-st data-kind="stroke" data-thread={ROSE} className="vine" d="M58 140 q 21 -12 42 0 t 42 0" />
+        <text data-st data-thread={BURGUNDY} data-dur={1600} data-stitches={40} x="100" y="98" textAnchor="middle" className="stitch-text">Amelia</text>
+        <text data-st data-thread={OLIVE} data-dur={700} data-stitches={30} x="100" y="122" textAnchor="middle" className="stitch-small">12 · 03 · 2026</text>
       </Hoop>
     ),
   },
@@ -49,8 +57,9 @@ const ITEMS = [
     art: (
       <Hoop>
         <g className="paw" transform="translate(100 104)">
-          <ellipse rx="20" ry="16" cy="10" /><circle r="8" cx="-20" cy="-14" /><circle r="8" cx="-7" cy="-26" />
-          <circle r="8" cx="7" cy="-26" /><circle r="8" cx="20" cy="-14" />
+          <ellipse data-st data-thread={BURGUNDY} data-dur={700} rx="20" ry="16" cy="10" />
+          <circle data-st data-thread={BURGUNDY} r="8" cx="-20" cy="-14" /><circle data-st data-thread={BURGUNDY} r="8" cx="-7" cy="-26" />
+          <circle data-st data-thread={BURGUNDY} r="8" cx="7" cy="-26" /><circle data-st data-thread={BURGUNDY} r="8" cx="20" cy="-14" />
         </g>
       </Hoop>
     ),
@@ -59,10 +68,10 @@ const ITEMS = [
     n: "IV", title: "Patches & Accessories", price: "from $18", tone: "tone-olive",
     text: "Stitched details for tote bags, denim jackets, bookmarks and more.",
     art: (
-      <svg viewBox="0 0 200 200">
-        <rect x="40" y="40" width="120" height="120" rx="26" className="patch" />
-        <path className="heart" d="M100 138s-30-17-30-38a16 16 0 0 1 30-8 16 16 0 0 1 30 8c0 21-30 38-30 38Z" />
-      </svg>
+      <StitchArt viewBox="0 0 200 200" needleScale={0.7}>
+        <rect data-st data-thread={OLIVE} data-dur={1100} data-stitches={26} x="40" y="40" width="120" height="120" rx="26" className="patch" />
+        <path data-st data-thread={ROSE} data-dur={700} className="heart" d="M100 138s-30-17-30-38a16 16 0 0 1 30-8 16 16 0 0 1 30 8c0 21-30 38-30 38Z" />
+      </StitchArt>
     ),
   },
   {
@@ -70,16 +79,15 @@ const ITEMS = [
     text: "Initials, dates and a sprig of your bouquet, stitched for the big day or the years after.",
     art: (
       <Hoop>
-        <text x="100" y="104" textAnchor="middle" className="stitch-text">A &amp; J</text>
-        <path className="vine" d="M50 130 q 25 -14 50 0 t 50 0" />
+        <path data-st data-kind="stroke" data-thread={ROSE} className="vine" d="M50 130 q 25 -14 50 0 t 50 0" />
         <Flower x={58} y={78} s={0.5} />
         <Flower x={142} y={78} s={0.5} />
+        <text data-st data-thread={BURGUNDY} data-dur={1300} data-stitches={30} x="100" y="104" textAnchor="middle" className="stitch-text">A &amp; J</text>
       </Hoop>
     ),
   },
 ];
 
-/* Hover tilt: the art panel leans toward the cursor like a card being picked up. */
 function tilt(e: MouseEvent<HTMLDivElement>) {
   const el = e.currentTarget;
   const r = el.getBoundingClientRect();
