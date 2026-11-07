@@ -42,6 +42,28 @@ jobs:
       - run: npm ci
       - run: npm run build
 
+      # Fail loudly and early if the repository secrets are missing, rather than
+      # letting wrangler report a confusing "no API token" error further down.
+      - name: Check deployment secrets are present
+        env:
+          TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          ACCOUNT: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          ok=1
+          if [ -z "$TOKEN" ]; then
+            echo "::error::CLOUDFLARE_API_TOKEN is empty. Add it under Settings → Secrets and variables → Actions → Repository secrets (a Variable will not work)."
+            ok=0
+          else
+            echo "CLOUDFLARE_API_TOKEN present (${#TOKEN} characters)"
+          fi
+          if [ -z "$ACCOUNT" ]; then
+            echo "::error::CLOUDFLARE_ACCOUNT_ID is empty. Add it in the same place."
+            ok=0
+          else
+            echo "CLOUDFLARE_ACCOUNT_ID present (${#ACCOUNT} characters)"
+          fi
+          [ "$ok" = "1" ]
+
       # Idempotent: schema.sql is written with IF NOT EXISTS throughout.
       # -y answers the confirmation prompt, which has no TTY to answer it in CI.
       - name: Apply the D1 schema
