@@ -43,12 +43,13 @@ jobs:
       - run: npm run build
 
       # Idempotent: schema.sql is written with IF NOT EXISTS throughout.
+      # -y answers the confirmation prompt, which has no TTY to answer it in CI.
       - name: Apply the D1 schema
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: d1 execute littlethreads --remote --file=./schema.sql
+          command: d1 execute littlethreads --remote --file=./schema.sql -y
 
       - name: Publish
         uses: cloudflare/wrangler-action@v3
