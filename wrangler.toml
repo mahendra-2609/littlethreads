@@ -7,7 +7,7 @@ pages_build_output_dir = "dist"
 [[d1_databases]]
 binding = "DB"
 database_name = "littlethreads"
-database_id = "REPLACE_WITH_ID_FROM_WRANGLER_D1_CREATE"
+database_id = "1bcd93b9-3ba8-46a6-8af1-7d09a4129847"
 
 # Secrets are NOT set here. Locally they come from .dev.vars; in production from
 # Cloudflare Pages → Settings → Variables and Secrets:
