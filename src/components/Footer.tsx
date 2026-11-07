@@ -24,7 +24,7 @@ export function Footer() {
             <p className="footer-h">Say hello</p>
             <ul>
               <li><a href="mailto:tejaswiande029@gmail.com">tejaswiande029@gmail.com</a></li>
-              <li><a href="https://instagram.com/little_threadsstudio17" target="_blank" rel="noreferrer">@little_threadsstudio17</a></li>
+              <li><a href="https://instagram.com/little_threadstudio17" target="_blank" rel="noreferrer">@little_threadstudio17</a></li>
             </ul>
           </div>
         </div>
