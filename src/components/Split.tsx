@@ -8,7 +8,10 @@ export function Words({ text, className = "" }: { text: string; className?: stri
   return (
     <span className={`a-words ${className}`.trim()} aria-label={text}>
       {words.map((w, i) => (
-        <span className="w" key={i} style={idx(i)} aria-hidden="true">{w}{i < words.length - 1 ? " " : ""}</span>
+        <span key={i}>
+          <span className="w" style={idx(i)} aria-hidden="true">{w}</span>
+          {i < words.length - 1 ? " " : ""}
+        </span>
       ))}
     </span>
   );
